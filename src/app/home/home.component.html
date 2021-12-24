@@ -1,0 +1,6 @@
+<div class="col-md-12 mt-5"><b>Welcome to Home Page!</b></div>
+<div class="col-md-6 mt-3"><p>Welcome User! You can view your referene ID by clicking on <b>Generate Button!</b></p></div>
+<button [disabled]="!btnload" (click)="findRandom()">Generate!</button>
+<h2 class="mt-4"><i>Your reference ID is: <span [ngStyle]="{color: getColor()}">{{random}}</span></i></h2>
+
+<p *ngIf="access">You have access!</p>

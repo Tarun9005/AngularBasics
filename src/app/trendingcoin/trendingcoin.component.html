@@ -1,0 +1,13 @@
+<p>trendingcoin works!</p>
+<button (click)="onDataService()">Click to pass data to service!</button>
+<br><br>
+<p>List of some trending coins coming from Trending Service:</p>
+<p *ngFor="let item of trends"><b>Coin Name:</b> {{item.name}} and <b>Price:</b> {{item.price}}</p>
+<br><br><br>
+<h3>Passing data using Services from this component to Component below:</h3>
+
+<button (click)="onEmitEvent()">Emit Activate!</button>
+<br><br>
+
+
+<app-activatepart></app-activatepart>

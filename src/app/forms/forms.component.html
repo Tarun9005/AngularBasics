@@ -1,0 +1,32 @@
+<p>forms works!</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" ngModel #email="ngModel" aria-describedby="emailHelp"
+       name="email" placeholder="Enter email" required email>
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      <p *ngIf="!email.valid && email.touched">Please enter valid email!</p>
+    </div><br>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" name="password" ngModel id="exampleInputPassword1" placeholder="Password" required>
+    </div><br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Username</label>
+        <input type="text" class="form-control" name="username" [ngModel]="defaultUsername" id="exampleInputUsername1" placeholder="Username" required>
+      </div><br>
+<br>
+<p>Your reply: {{answer}}</p><br>
+<div class="form-group"><textarea name="area" [(ngModel)]="answer" style="width:-webkit-fill-available;"></textarea></div>
+  <br>
+    <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <br><br>
+  <div *ngIf="submitcond">
+  <h4>Here is your submitted data!</h4>
+  <p>Email: {{semail}}</p>
+  <p>Password: {{spassword}}</p>
+  <p>Username: {{susername}}</p>
+</div>

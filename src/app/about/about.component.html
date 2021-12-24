@@ -1,0 +1,11 @@
+<p>Welcome to about section. I am the <b>Parent Component</b> and I got two <b>Child Components</b> inside me!.</p>
+
+<h3 style="color: indianred;" *ngIf="clickvalue">
+    {{weburl}} I am coming from Child Component 2
+</h3>
+<br>
+<br>
+<app-developerinfo *ngFor="let devinfo of about" [element]="devinfo"></app-developerinfo>
+<br>
+<br>
+<app-websiteinfobtn (websiteDisplayed)="OnBtnClicked($event)"></app-websiteinfobtn>
