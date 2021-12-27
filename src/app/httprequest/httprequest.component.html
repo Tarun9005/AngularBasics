@@ -1,0 +1,30 @@
+<p>httprequest works!</p>
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+   
+    <div class="form-group">
+      <label for="exampleInputPassword1">Title</label>
+      <input type="text" class="form-control" name="title" ngModel id="exampleInputPassword1" placeholder="Title" required>
+    </div><br>
+    <div class="form-group">
+        <label for="exampleInputPassword1">Content</label>
+        <input type="text" class="form-control" name="content" ngModel id="exampleInputUsername1" placeholder="Content" required>
+      </div><br>
+<br>
+
+
+  <br>
+    <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+  </form>
+  <br>
+  <br>
+  <button (click)="getPost()">GetData</button>
+  <br><br>
+  <p *ngIf="loadedPost.length<1 && !isFetching">No Post Available!</p>
+
+  <ul *ngIf="loadedPost.length>=1 && !isFetching">
+      <li *ngFor="let item of loadedPost">
+          <h2>{{item.title}}</h2>
+          <p>{{item.content}}</p>
+      </li>
+  </ul>
+  <p *ngIf="isFetching">Loading...may be some spinner</p>

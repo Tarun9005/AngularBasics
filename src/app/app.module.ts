@@ -13,6 +13,8 @@ import { TrendingcoinComponent } from './trendingcoin/trendingcoin.component';
 import { ActivatepartComponent } from './activatepart/activatepart.component';
 import { FormsComponent } from './forms/forms.component';
 import { FormsModule } from '@angular/forms';
+import { HttprequestComponent } from './httprequest/httprequest.component';
+import {HttpClientModule} from '@angular/common/http';
 //import { DeveloperurlComponent } from './developerurl/developerurl.component';
 
 const appRoutes: Routes=[
@@ -21,6 +23,7 @@ const appRoutes: Routes=[
   {path: 'contact',component:ContactComponent},
   {path: 'trending',component:TrendingcoinComponent},
   {path:'forms',component:FormsComponent},
+  {path:'httprequest',component:HttprequestComponent},
   {path:'',component:HomeComponent}
 
 ];
@@ -34,11 +37,13 @@ const appRoutes: Routes=[
     WebsiteinfobtnComponent,
     TrendingcoinComponent,
     FormsComponent,
-    ActivatepartComponent
+    ActivatepartComponent,
+    HttprequestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
